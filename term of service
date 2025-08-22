@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service</title>
+  <style>
+    body { font-family: Arial, sans-serif; line-height: 1.6; margin: 20px; }
+    h1 { color: #333; }
+  </style>
+</head>
+<body>
+  <h1>Terms of Service</h1>
+  <p>Welcome to Digital Hustle Academy. By accessing or using our services, you agree to comply with these Terms of Service.</p>
+
+  <h2>1. Use of Service</h2>
+  <p>You agree not to misuse our services or engage in unlawful activities while using this platform.</p>
+
+  <h2>2. Accounts</h2>
+  <p>You are responsible for maintaining the security of your account and any activity that occurs under your account.</p>
+
+  <h2>3. Payments</h2>
+  <p>All payments for premium content, diamonds, or other digital products are final and non-refundable.</p>
+
+  <h2>4. Termination</h2>
+  <p>We reserve the right to suspend or terminate accounts that violate our terms.</p>
+
+  <h2>5. Changes</h2>
+  <p>We may update these terms from time to time. Continued use of our services means you accept the changes.</p>
+
+  <p><strong>Last updated:</strong> August 2025</p>
+</body>
+</html>
