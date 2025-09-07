@@ -112,16 +112,29 @@
 
     <div class="reflection">
       <h3>✍ Student Reflection</h3>
-      <form action="https://formspree.io/f/myzdbanr" method="POST">
-        <textarea name="reflection" placeholder="Write what you understood from this lesson..."></textarea>
-        <button type="submit">Submit Reflection</button>
-      </form>
+      <form action="https://formspree.io/f/myzdbanr" method="POST" onsubmit="unlockNextLesson(1)">
+  <textarea name="reflection" placeholder="Write what you understood from this lesson..."></textarea>
+  <button type="submit">Submit Reflection</button>
+</form>
     </div>
 
     <div class="nav-links">
       <a href="#">⬅ Previous Lesson</a>
       <a href="lesson2.html">Next Lesson ➡</a>
     </div>
+    <script>
+  function unlockNextLesson(currentLesson) {
+    // Save current lesson as completed
+    let progress = JSON.parse(localStorage.getItem("lessonProgress")) || {1:false,2:false,3:false,4:false};
+    progress[currentLesson] = true;
+
+    // Save progress
+    localStorage.setItem("lessonProgress", JSON.stringify(progress));
+
+    // Optionally show success message
+    alert("✅ Reflection submitted! Lesson " + (currentLesson+1) + " is now unlocked.");
+  }
+</script>
   </section>
 
   <footer>
