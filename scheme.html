@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scheme of Work - Digital Hustle Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #F9FAFB;
+      color: #111827;
+    }
+    header {
+      background: #1E40AF;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    header h1 { font-family: 'Poppins', sans-serif; margin: 0; }
+    
+    .timeline {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding-left: 2rem;
+      border-left: 3px solid #1E40AF;
+      position: relative;
+    }
+    .lesson {
+      margin-bottom: 2rem;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .lesson::before {
+      content: "📘";
+      position: absolute;
+      left: -2.2rem;
+      top: 0;
+      font-size: 1.5rem;
+    }
+    .lesson h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: #1E40AF;
+      font-family: 'Poppins', sans-serif;
+    }
+    .lesson p { margin: 0.3rem 0 0; color: #374151; font-size: 0.95rem; }
+    .lesson a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      background: #1E40AF;
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .lesson a.locked {
+      background: #9CA3AF;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+    .done { color: green; font-weight: bold; margin-left: 0.5rem; }
+    footer {
+      background: #1E40AF;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📚 Scheme of Work</h1>
+    <p>Digital Hustle Academy - Web Development Track</p>
+  </header>
+
+  <section class="timeline">
+    <div class="lesson" id="lesson1">
+      <h3>Lesson 1: Introduction to HTML <span class="status"></span></h3>
+      <p>Basics of web structure and HTML tags.</p>
+      <a href="lesson1.html" id="link1">Start Lesson</a>
+    </div>
+    <div class="lesson" id="lesson2">
+      <h3>Lesson 2: Writing Your First HTML Code <span class="status"></span></h3>
+      <p>Creating a simple webpage.</p>
+      <a href="lesson2.html" id="link2" class="locked">Locked 🔒</a>
+    </div>
+    <div class="lesson" id="lesson3">
+      <h3>Lesson 3: Styling with CSS <span class="status"></span></h3>
+      <p>Adding color and layout.</p>
+      <a href="lesson3.html" id="link3" class="locked">Locked 🔒</a>
+    </div>
+    <div class="lesson" id="lesson4">
+      <h3>Lesson 4: Hosting on GitHub Pages <span class="status"></span></h3>
+      <p>Making your website live.</p>
+      <a href="lesson4.html" id="link4" class="locked">Locked 🔒</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Digital Hustle Academy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Load progress from localStorage
+    let progress = JSON.parse(localStorage.getItem("lessonProgress")) || {1:false,2:false,3:false,4:false};
+
+    function updateLessons() {
+      for (let i = 1; i <= 4; i++) {
+        let link = document.getElementById("link" + i);
+        let status = document.querySelector("#lesson" + i + " .status");
+        if (progress[i]) {
+          link.classList.remove("locked");
+          link.textContent = "Start Lesson ✅";
+          status.textContent = "✔️ Completed";
+          status.classList.add("done");
+          // unlock next lesson
+          if (i < 4) document.getElementById("link" + (i+1)).classList.remove("locked");
+        }
+      }
+    }
+
+    // Call this function when a lesson is completed
+    function completeLesson(num) {
+      progress[num] = true;
+      localStorage.setItem("lessonProgress", JSON.stringify(progress));
+      updateLessons();
+    }
+
+    updateLessons();
+  </script>
+</body>
+</html>
