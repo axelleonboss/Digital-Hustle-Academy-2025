@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Digital Hustle Academy</title>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7243555513981538"
-     crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7243555513981538"
+      crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
   <style>
     body {
@@ -14,6 +14,21 @@
       background-color: #F3F4F6;
       color: #111827;
     }
+    /* NEW: Skip link style for accessibility */
+    .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 0;
+        background: #F97316;
+        color: white;
+        padding: 8px;
+        z-index: 100;
+        text-decoration: none;
+    }
+    .skip-link:focus {
+        top: 0;
+    }
+
     header {
       background: #1E40AF;
       color: white;
@@ -68,21 +83,94 @@
       padding: 3rem 2rem;
       text-align: center;
     }
-    /* Fix faint text */
+    /* Base section styles */
     .section h3 {
       font-family: 'Poppins', sans-serif;
       font-size: 1.8rem;
       margin-bottom: 1rem;
-      color: #1E40AF; /* Strong blue headings */
+      color: #1E40AF; 
     }
     .section p {
       max-width: 600px;
       margin: 0 auto;
       font-size: 1.05rem;
       line-height: 1.7;
-      color: #111827; /* Dark text for visibility */
+      color: #111827; 
       font-weight: 500;
     }
+    
+    /* Benefits Section Styles */
+    .benefits-section {
+      background-color: #E5E7EB; 
+    }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1000px;
+      margin: 2rem auto 0;
+    }
+    .benefit-item {
+      padding: 1.5rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .benefit-item h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.2rem;
+      color: #1E40AF;
+      margin-bottom: 0.5rem;
+    }
+    .benefit-item p {
+      font-size: 0.95rem;
+      color: #4B5563;
+      line-height: 1.6;
+      margin: 0 auto;
+      max-width: none;
+    }
+    .benefit-item .highlight {
+        border-bottom: 2px solid #F97316;
+    }
+
+    /* Testimonials Section Styles */
+    .testimonials {
+      background-color: #ffffff;
+    }
+    .testimonial-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 1000px;
+      margin: 2rem auto 0;
+    }
+    .testimonial-card {
+      background-color: #F3F4F6;
+      border-left: 5px solid #F97316;
+      padding: 1.5rem;
+      max-width: 350px;
+      text-align: left;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+    }
+    .testimonial-card p {
+      margin-bottom: 0.5rem;
+      color: #374151;
+      font-style: italic;
+      max-width: none;
+    }
+    .testimonial-card .author {
+      font-weight: 600;
+      font-style: normal;
+      margin-top: 1rem;
+      color: #111827;
+      font-size: 1rem;
+      text-align: right;
+    }
+    
+    /* Footer Styles */
     footer {
       background: #1E40AF;
       color: white;
@@ -90,45 +178,94 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+    .guarantee-text { /* NEW: Guarantee text style */
+        color: #F97316;
+        font-weight: 600;
+        font-size: 0.9rem;
+        margin: 0.5rem 0;
+    }
   </style>
 </head>
 <body>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
   <header>
     <h1>Digital Hustle Academy</h1>
     <nav>
       <a href="index.html#home">Home</a>
       <a href="index.html#about">About</a>
       <a href="course.html#course">course</a>
-       <a href="scheme.html#scheme">scheme</a>
+      <a href="scheme.html#scheme">scheme</a>
       <a href="contact.html#contact">Contact</a>
       <a href="privacy.html">Privacy</a>
     </nav>
   </header>  
 
-  <section class="hero" id="home">
-    <h2>Master Digital Skills, Build Your Future</h2>
-    <p>Learn web design, crypto, product promotion, and digital art all in one place.</p>
-    <a href="course.html" class="cta-button">Start Learning Now</a>
-  </section>  
+  <main id="main-content">
 
-  <section class="section" id="about">
-    <h3>About Us</h3>
-    <p>Digital Hustle Academy is built to empower learners with real-world digital skills. From designing websites to understanding cryptocurrency, we give you the tools to hustle smarter in today’s digital economy.</p>
-  </section>  
+    <section class="hero" id="home">
+      <h2>Master Digital Skills, Build Your Future</h2>
+      <p>Learn web design, crypto, product promotion, and digital art all in one place.</p>
+      <a href="course.html" class="cta-button">Start Learning Now</a>
+    </section>  
 
-  <section class="section" id="courses">
-    <h3>What You’ll Learn</h3>
-    <p>✔ Web Design Basics<br>✔ Cryptocurrency Essentials<br>✔ Product Promotion Strategies<br>✔ Digital Art & Creativity</p>
-  </section>  
-  <footer>
+    <section class="section" id="about">
+      <h3>About Us</h3>
+      <p>Digital Hustle Academy is built to empower learners with real-world digital skills. From designing websites to understanding cryptocurrency, we give you the tools to hustle smarter in today’s digital economy.</p>
+    </section>  
+
+    <section class="section benefits-section">
+      <h3>Why Choose Digital Hustle Academy?</h3>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <h4><span class="highlight">Practical, Hands-On Training</span></h4>
+          <p>Forget endless theory. Our courses are focused on real-world projects and skills you can use immediately to start earning.</p>
+        </div>
+        <div class="benefit-item">
+          <h4><span class="highlight">Flexible, Self-Paced Learning</span></h4>
+          <p>Learn on your schedule. Access all materials 24/7 so you can balance your education with your current commitments.</p>
+        </div>
+        <div class="benefit-item">
+          <h4><span class="highlight">Community Support</span></h4>
+          <p>Join a network of ambitious digital hustlers. Get peer feedback, ask questions, and collaborate on new ideas.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="courses">
+      <h3>What You’ll Learn</h3>
+      <p>✔ Web Design Basics<br>✔ Cryptocurrency Essentials<br>✔ Product Promotion Strategies<br>✔ Digital Art & Creativity</p>
+    </section>  
+
+    <section class="section testimonials">
+      <h3>Hear From Our Students</h3>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p>"The Web Design course helped me land my first freelance client! Clear, practical, and truly a game-changer."</p>
+          <p class="author">- Alex R., Freelance Designer</p>
+        </div>
+        <div class="testimonial-card">
+          <p>"I finally understand crypto without the confusing jargon. The lessons are easy to follow and immediately useful."</p>
+          <p class="author">- Jordan P., New Investor</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section final-cta">
+      <h3>Ready to Start Your Digital Journey?</h3>
+      <p>Don't wait to turn your skills into income. Click below to explore our full curriculum and enroll today.</p>
+      <a href="course.html" class="cta-button">View All Courses</a>
+    </section>
+
+  </main> <footer>
+    <p class="guarantee-text">⭐ All Courses Backed by a 30-Day Money-Back Guarantee ⭐</p>
     <p>© 2025 Digital Hustle Academy. All rights reserved.</p>
   </footer>
-  <!-- Default Statcounter code for My Business webs
-https://axelleonboss.github.io/Digital-Hustle-Academy-2025/ -->
-<script type="text/javascript">
-var sc_project=13167257; 
-var sc_invisible=1; 
-var sc_security="587a2026"; 
+
+  <script type="text/javascript">
+var sc_project=13167257; 
+var sc_invisible=1; 
+var sc_security="587a2026"; 
 </script>
 <script type="text/javascript"
 src="https://www.statcounter.com/counter/counter.js" async></script>
@@ -136,6 +273,5 @@ src="https://www.statcounter.com/counter/counter.js" async></script>
 href="https://statcounter.com/" target="_blank"><img class="statcounter"
 src="https://c.statcounter.com/13167257/0/587a2026/1/" alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
-<!-- End of Statcounter Code -->
 </body>
 </html>
